@@ -1,6 +1,4 @@
 
-
-
 def crear_archivo():
     with open('preguntas.txt', 'w') as archivo:
         archivo.write('')
