@@ -6,7 +6,8 @@ dificultades = ["Fácil", "Media", "Difícil"]
 
 # Matriz vacía [categoría][dificultad] → lista de preguntas
 # Cada pregunta: [enunciado, [opcion1, opcion2, opcion3, opcion4], correcta]
-preguntasMatriz = [[[] for _ in dificultades] for _ in categorias]
+preguntas = {categoria: {dificultad: [] for dificultad in dificultades} for categoria in categorias}
+preguntasMatriz = [[preguntas[categoria][dificultad] for dificultad in dificultades] for categoria in categorias]
 
 # Preguntas hardcodeadas para prueba del modo 1vs1
 
@@ -65,6 +66,42 @@ preguntasMatriz[2][2].append([
     "¿Quién ganó el Mundial de Fútbol de 1986?",
     ["Brasil", "Argentina", "Alemania", "Italia"],
     "Argentina"
+])
+# Geografía - Fácil
+preguntasMatriz[3][0].append([
+    "¿Cuál es la capital de Francia?",
+    ["Berlín", "Madrid", "París", "Roma"],
+    "París"
+])
+# Geografía - Media
+preguntasMatriz[3][1].append([
+    "¿Cuál es el río más largo del mundo?",
+    ["Amazonas", "Nilo", "Yangtsé", "Misisipi"],
+    "Amazonas"
+])
+# Geografía - Difícil
+preguntasMatriz[3][2].append([
+    "¿En qué continente se encuentra Egipto?",
+    ["Asia", "África", "Europa", "América"],
+    "África"
+])
+# Arte - Fácil
+preguntasMatriz[4][0].append([
+    "¿Quién pintó la Mona Lisa?",
+    ["Van Gogh", "Picasso", "Da Vinci", "Rembrandt"],
+    "Da Vinci"
+])
+# Arte - Media
+preguntasMatriz[4][1].append([
+    "¿En qué museo se encuentra la obra 'El Grito'?",
+    ["Louvre", "Museo del Prado", "MOMA", "Museo Nacional de Bellas Artes"],
+    "MOMA"
+]) 
+# Arte - Difícil
+preguntasMatriz[4][2].append([
+    "¿Quién dirigió la pelicula de 'Shrek'?",
+    ["Andrew Adamson", "Chris Miller", "Vicky Jenson", "David Bowers"],
+    "Andrew Adamson"
 ])
 
 # Mostrar opciones por número y validar elección
