@@ -1,0 +1,40 @@
+historia;facil;¿Quién fue el primer presidente de Argentina?;Manuel Belgrano;Bernardino Rivadavia;Juan Manuel de Rosas;Domingo Sarmiento;Bernardino Rivadavia
+historia;media;¿En qué año fue la Revolución Francesa?;1789;1776;1810;1806;1789
+historia;dificil;¿Cuál fue el emperador romano durante la erupción del Vesubio en el 79 d.C.?;Nerón;Trajano;Tito;Augusto;Tito
+ciencia;facil;¿Cuál es el planeta más cercano al Sol?;Venus;Mercurio;Tierra;Marte;Mercurio
+ciencia;media;¿Cuál es la fórmula química del agua?;H2O;CO2;O2;NaCl;H2O
+ciencia;dificil;¿Qué partícula subatómica tiene carga negativa?;Protón;Neutrón;Electrón;Positrón;Electrón
+deporte;facil;¿Cuántos jugadores hay en un equipo de fútbol?;7;9;11;13;11
+deporte;media;¿En qué deporte se utiliza una raqueta?;Fútbol;Tenis;Natación;Ciclismo;Tenis
+deporte;dificil;¿Quién ganó el Mundial de Fútbol de 1986?;Brasil;Argentina;Alemania;Italia;Argentina
+geografía;facil;¿Cuál es la capital de Francia?;Berlín;Madrid;París;Roma;París
+geografía;media;¿Cuál es el río más largo del mundo?;Amazonas;Nilo;Yangtsé;Misisipi;Amazonas
+geografía;dificil;¿En qué continente se encuentra Egipto?;Asia;África;Europa;América;África
+arte;facil;¿Quién pintó la Mona Lisa?;Van Gogh;Picasso;Da Vinci;Rembrandt;Da Vinci
+arte;media;¿En qué museo se encuentra la obra 'El Grito'?;Louvre;Museo del Prado;MOMA;Museo Nacional de Bellas Artes;MOMA
+arte;dificil;¿Quién dirigió la pelicula de 'Shrek'?;Andrew Adamson;Chris Miller;Vicky Jenson;David Bowers;Andrew Adamson
+historia;facil;¿En qué año llegó Colón a América?;1492;1500;1600;1400;1492
+geografía;media;¿Cuál es el río más largo del mundo?;Amazonas;Nilo;Yangtsé;Misisipi;Amazonas
+ciencia;facil;¿Qué órgano del cuerpo bombea sangre?;Corazón;Hígado;Pulmón;Riñón;Corazón
+arte;dificil;¿Quién pintó "El Jardín de las Delicias"?;Hieronymus Bosch;Picasso;Van Gogh;Rembrandt;Hieronymus Bosch
+deporte;media;¿Cuántos puntos vale un gol en fútbol?;1;2;3;5;1
+historia;dificil;¿Quién escribió "El Príncipe"?;Maquiavelo;Platón;Sócrates;Aristóteles;Maquiavelo
+geografía;facil;¿Cuál es el país más grande del mundo?;Rusia;Canadá;Estados Unidos;China;Rusia
+ciencia;media;¿Qué tipo de animal es una ballena?;Mamífero;Pez;Reptil;Anfibio;Mamífero
+arte;facil;¿Quién pintó "La Última Cena"?;Leonardo da Vinci;Miguel Ángel;Rafael;Donatello;Leonardo da Vinci
+deporte;dificil;¿En qué año se fundaron los Juegos Olímpicos modernos?;1896;1900;1888;1912;1896
+historia;facil;¿Quién fue el primer presidente de Estados Unidos?;George Washington;Abraham Lincoln;Thomas Jefferson;John Adams;George Washington
+geografía;dificil;¿Cuál es la montaña más alta de África?;Kilimanjaro;Everest;Aconcagua;Mont Blanc;Kilimanjaro
+ciencia;facil;¿Qué gas necesitamos para respirar?;Oxígeno;Hidrógeno;Helio;Nitrógeno;Oxígeno
+arte;media;¿Qué estilo artístico desarrolló Picasso?;Cubismo;Impresionismo;Surrealismo;Realismo;Cubismo
+deporte;facil;¿Cuántos jugadores forman un equipo de baloncesto?;5;7;10;11;5
+historia;media;¿Quién fue el autor del "Discurso de Gettysburg"?;Abraham Lincoln;George Washington;Thomas Jefferson;John F. Kennedy;Abraham Lincoln
+geografía;facil;¿Qué continente tiene más países?;África;Asia;Europa;América del Sur;África
+ciencia;dificil;¿Qué partícula subatómica tiene carga positiva?;Protón;Electrón;Neutrón;Positrón;Protón
+arte;dificil;¿Quién esculpió "El David"?;Miguel Ángel;Bernini;Donatello;Rafael;Miguel Ángel
+deporte;media;¿Qué país ganó el Mundial de Fútbol de 2010?;España;Brasil;Alemania;Argentina;España
+historia;media;¿Qué revolucionario dijo "La historia me absolverá"?;Fidel Castro;Che Guevara;Simón Bolívar;José Martí;Fidel Castro
+geografía;media;¿Qué océano es el más grande del mundo?;Pacífico;Atlántico;Índico;Ártico;Pacífico
+ciencia;media;¿Quién formuló la teoría de la evolución?;Charles Darwin;Isaac Newton;Albert Einstein;Gregor Mendel;Charles Darwin
+arte;facil;¿Quién pintó "La noche estrellada"?;Van Gogh;Picasso;Dalí;Monet;Van Gogh
+deporte;dificil;¿Cuántas medallas de oro ganó Michael Phelps en Beijing 2008?;8;7;9;10;8
