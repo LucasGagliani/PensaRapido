@@ -5,6 +5,9 @@ preguntasMatriz = funcionesTxt.preguntasMatriz
 
 validar_nombre = lambda nombre: nombre != "" and nombre.isalpha() and len(nombre) >= 3 and len(nombre) <= 20
 def pedir_nombre(jugador_num):
+    """
+    Pide el nombre del jugador y valida que sea correcto.
+    """
     while True:
         nombre = input(f"Nombre del Jugador {jugador_num}: ")
         if not validar_nombre(nombre):
@@ -156,9 +159,3 @@ def modo1vs1():
         print(f"¡Ganó {nombreJugador2}!")
     else:
         print("¡Empate!")
-
-
-
-
-
-
