@@ -3,6 +3,17 @@ import random  # Importar random para elegir preguntas aleatorias
 
 preguntasMatriz = funcionesTxt.preguntasMatriz
 
+validar_nombre = lambda nombre: nombre != "" and nombre.isalpha() and len(nombre) >= 3 and len(nombre) <= 20
+def pedir_nombre(jugador_num):
+    """
+    Pide el nombre del jugador y valida que sea correcto.
+    """
+    while True:
+        nombre = input(f"Nombre del Jugador {jugador_num}: ")
+        if not validar_nombre(nombre):
+            print("⚠️ El nombre solo debe contener letras, sin espacios ni símbolos ni números.")
+        else:
+            return nombre
 
 def mostrarOpciones(lista):
     """
@@ -71,8 +82,8 @@ def modo1vs1():
     """
     funcionesTxt.leer_preguntas()
     print("\n¡Bienvenidos al modo 1vs1!")
-    nombreJugador1 = input("Nombre del Jugador 1: ")
-    nombreJugador2 = input("Nombre del Jugador 2: ")
+    nombreJugador1 = pedir_nombre(1)
+    nombreJugador2 = pedir_nombre(2)
     puntajes = [0, 0]
 
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
@@ -148,9 +159,3 @@ def modo1vs1():
         print(f"¡Ganó {nombreJugador2}!")
     else:
         print("¡Empate!")
-
-
-
-
-
-

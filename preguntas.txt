@@ -38,3 +38,60 @@ geografía;media;¿Qué océano es el más grande del mundo?;Pacífico;Atlántic
 ciencia;media;¿Quién formuló la teoría de la evolución?;Charles Darwin;Isaac Newton;Albert Einstein;Gregor Mendel;Charles Darwin
 arte;facil;¿Quién pintó "La noche estrellada"?;Van Gogh;Picasso;Dalí;Monet;Van Gogh
 deporte;dificil;¿Cuántas medallas de oro ganó Michael Phelps en Beijing 2008?;8;7;9;10;8
+historia;facil;¿En qué año se descubrió América?;1492;1500;1600;1700;1492
+geografía;dificil;¿Cuál es el desierto más grande del mundo?;Sahara;Kalahari;Atacama;Gobi;Sahara
+ciencia;facil;¿Qué gas es responsable del cambio climático?;Dióxido de carbono;Oxígeno;Nitrógeno;Hidrógeno;Dióxido de carbono
+arte;media;¿Quién pintó "La persistencia de la memoria"?;Dalí;Picasso;Miró;Kandinsky;Dalí
+deporte;facil;¿Cuántos equipos hay en la NBA?;30;32;28;24;30
+historia;media;¿En qué año comenzó la Segunda Guerra Mundial?;1939;1914;1945;1929;1939
+geografía;facil;¿En qué continente se encuentra la selva del Amazonas?;América del Sur;África;Asia;Oceanía;América del Sur
+ciencia;media;¿Qué parte del cuerpo humano regula la temperatura?;Hipotálamo;Corazón;Estómago;Riñón;Hipotálamo
+arte;dificil;¿Quién pintó "Las Meninas"?;Velázquez;Goya;El Greco;Murillo;Velázquez
+deporte;media;¿Qué país ganó la Copa del Mundo de 2014?;Alemania;Brasil;Argentina;España;Alemania
+historia;facil;¿Quién fue el último emperador romano?;Rómulo Augústulo;Nerón;Tito;Augusto;Rómulo Augústulo
+geografía;dificil;¿Cuál es el lago más grande del mundo?;Mar Caspio;Lago Superior;Lago Victoria;Lago Baikal;Mar Caspio
+ciencia;facil;¿Qué elemento tiene el símbolo "O"?;Oxígeno;Oro;Osmio;Ozono;Oxígeno
+arte;media;¿Quién pintó "El Jardín de las Delicias"?;Hieronymus Bosch;Van Gogh;Picasso;Rembrandt;Hieronymus Bosch
+deporte;facil;¿Cuántos jugadores hay en un equipo de rugby?;15;11;9;7;15
+historia;media;¿En qué guerra participaron las batallas de Waterloo y Austerlitz?;Guerras Napoleónicas;Guerra Civil Española;Primera Guerra Mundial;Segunda Guerra Mundial;Guerras Napoleónicas
+geografía;facil;¿Cuál es el continente más pequeño del mundo?;Oceanía;Europa;Antártida;Asia;Oceanía
+ciencia;dificil;¿Cómo se llama la capa más externa de la Tierra?;Corteza;Manto;Núcleo;Atmósfera;Corteza
+arte;facil;¿Quién pintó "La creación de Adán"?;Miguel Ángel;Leonardo Da Vinci;Rafael;Donatello;Miguel Ángel
+deporte;media;¿En qué deporte se juega el Open de Australia?;Tenis;Fútbol;Baloncesto;Golf;Tenis
+historia;facil;¿En qué año comenzó la Primera Guerra Mundial?;1914;1912;1918;1920;1914
+geografía;dificil;¿Cuál es el país con más volcanes?;Indonesia;México;Japón;Estados Unidos;Indonesia
+ciencia;media;¿Qué animal es conocido por su capacidad de camuflaje?;Camaleón;Pulpo;León;Jirafa;Camaleón
+arte;dificil;¿Quién pintó "El Guernica"?;Pablo Picasso;Francisco de Goya;Salvador Dalí;Diego Rivera;Pablo Picasso
+deporte;facil;¿Cuántos jugadores hay en un equipo de balonmano?;7;9;5;11;7
+historia;media;¿Dónde se firmó la independencia de los Estados Unidos?;Filadelfia;Washington D.C.;Boston;Nueva York;Filadelfia
+historia;facil;¿En qué año se firmó la independencia de Estados Unidos?;1776;1789;1800;1773;1776
+historia;media;¿Quién fue el líder de la Revolución Mexicana?;Pancho Villa;Emiliano Zapata;Benito Juárez;Porfirio Díaz;Emiliano Zapata
+historia;dificil;¿En qué batalla fue derrotado Napoleón Bonaparte?;Batalla de Waterloo;Batalla de Leipzig;Batalla de Austerlitz;Batalla de Borodino;Batalla de Waterloo
+ciencia;facil;¿Qué gas es necesario para la fotosíntesis?;Oxígeno;Dióxido de carbono;Nitrógeno;Hidrógeno;Dióxido de carbono
+ciencia;media;¿Quién desarrolló la teoría de la relatividad?;Isaac Newton;Albert Einstein;Niels Bohr;Galileo Galilei;Albert Einstein
+ciencia;dificil;¿Qué es la "materia oscura"?;Una forma de energía;Una partícula subatómica;Una forma de materia invisible;Una teoría sobre el origen del universo;Una forma de materia invisible
+deporte;facil;¿Cuántos jugadores forman un equipo de balonmano?;6;7;8;9;7
+deporte;media;¿En qué país se originó el rugby?;Australia;Inglaterra;Francia;Sudáfrica;Inglaterra
+deporte;dificil;¿En qué año se celebró el primer Campeonato Mundial de Fútbol?;1930;1928;1934;1940;1930
+geografía;facil;¿Cuál es la capital de España?;Madrid;Barcelona;Valencia;Sevilla;Madrid
+geografía;media;¿Qué país tiene más habitantes del mundo?;India;Estados Unidos;China;Indonesia;China
+geografía;dificil;¿Dónde se encuentra el desierto de Atacama?;Argentina;Chile;México;Perú;Chile
+arte;facil;¿Quién pintó la Capilla Sixtina?;Leonardo da Vinci;Rafael;Miguel Ángel;Velázquez;Miguel Ángel
+arte;media;¿Qué pintor español es conocido por su obra "Guernica"?;Dalí;Miró;Picasso;Velázquez;Picasso
+arte;dificil;¿Quién pintó "La Escuela de Atenas"?;Caravaggio;Rafael;Leonardo da Vinci;Michelangelo;Rafael
+historia;facil;¿Quién fue el líder de la Revolución Rusa?;Karl Marx;Lenin;Trotsky;Stalin;Lenin
+historia;media;¿Qué guerra enfrentó a Estados Unidos con el Reino Unido en 1812?;Guerra de Independencia;Guerra de Secesión;Guerra de 1812;Guerra Franco-Prusiana;Guerra de 1812
+historia;dificil;¿Quién fue el primer emperador de China?;Qin Shi Huang;Genghis Khan;Kublai Khan;Cao Cao;Qin Shi Huang
+ciencia;facil;¿Qué órgano del cuerpo humano bombea sangre?;Estómago;Riñones;Corazón;Pulmones;Corazón
+ciencia;media;¿Qué tipo de energía se genera a partir del viento?;Energía hidráulica;Energía solar;Energía eólica;Energía nuclear;Energía eólica
+ciencia;dificil;¿En qué parte de la célula se lleva a cabo la respiración celular?;Mitocondrias;Núcleo;Citoplasma;Ribosomas;Mitocondrias
+deporte;facil;¿Cuántos minutos dura un partido de fútbol reglamentario?;60;75;90;100;90
+deporte;media;¿Qué deporte se juega con una pelota ovalada?;Fútbol;Baloncesto;Rugby;Voleibol;Rugby
+deporte;dificil;¿Quién fue el máximo goleador de la historia del fútbol mundial?;Pele;Cristiano Ronaldo;Lionel Messi;Romário;Cristiano Ronaldo
+geografía;facil;¿Cuál es el continente más pequeño del mundo?;Asia;Europa;Oceanía;América del Sur;Oceanía
+geografía;media;¿Qué país tiene más islas del mundo?;Suecia;Canadá;Australia;Noruega;Suecia
+geografía;dificil;¿En qué océano se encuentra la Gran Barrera de Coral?;Atlántico;Índico;Pacífico;Ártico;Pacífico
+arte;facil;¿Quién pintó "El Guernica"?;Dalí;Picasso;Van Gogh;Goya;Picasso
+arte;media;¿Qué artista es conocido por sus pinturas de flores gigantes?;Monet;O'Keeffe;Picasso;Matisse;O'Keeffe
+arte;dificil;¿Qué escultor italiano creó "La Piedad"?;Bernini;Donatello;Miguel Ángel;Rodin;Miguel Ángel
+
