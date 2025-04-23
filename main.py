@@ -1,5 +1,6 @@
 import menu
 import juego1vs1
+import reglas
 
 menu.mostrarMenu()
 
@@ -12,6 +13,11 @@ if opcion == "1":
 #elif opcion == "3":
     #opcion de ver el rankin
 elif opcion == "4":
+    reglas.mostrar_reglas()
+elif opcion == "5":
     print("Saliendo del programa...")
 else:
     print("Opción inválida. Por favor, elige una opción válida.")
+
+
+
