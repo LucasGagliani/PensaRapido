@@ -1,4 +1,3 @@
-
 preguntasMatriz = [
     [[] for i in range(5)],
     [[] for i in range(5)],
@@ -25,19 +24,28 @@ def pedir_pregunta():
 
 
 def leer_preguntas():
-    
     with open('preguntas.txt', 'r', encoding='utf-8') as archivo:
-        for linea in archivo:
+        for numero_linea, linea in enumerate(archivo, start=1):
             datos = linea.strip().split(';')
-            categoria,dificultad,pregunta,*opciones,respuestaCorrecta = datos
-    
-            fila = {'facil':0,'media':1,'dificil':2}[dificultad]
-            columna = {'geografía':0,'historia':1,'ciencia':2,'deporte':3,'arte':4}[categoria]
-
+            
+            # Depuración: Imprimir la línea si tiene un formato incorrecto
+            if len(datos) < 4:
+                print(f"❌ Línea inválida en preguntas.txt (línea {numero_linea}): {linea.strip()}")
+                continue
+            
+            categoria, dificultad, pregunta, *opciones, respuestaCorrecta = datos
+            
+            fila = {'facil': 0, 'media': 1, 'dificil': 2}.get(dificultad)
+            columna = {'geografía': 0, 'historia': 1, 'ciencia': 2, 'deporte': 3, 'arte': 4}.get(categoria)
+            
+            if fila is None or columna is None:
+                print(f"❌ Dificultad o categoría inválida en línea {numero_linea}: {linea.strip()}")
+                continue
+            
             preguntasMatriz[fila][columna].append({
-            'pregunta': pregunta,
-            'opciones': opciones,
-            'respuestaCorrecta': respuestaCorrecta
+                'pregunta': pregunta,
+                'opciones': opciones,
+                'respuestaCorrecta': respuestaCorrecta
             })
 
 # Mostrar la matriz
