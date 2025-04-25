@@ -94,4 +94,3 @@ geografía;dificil;¿En qué océano se encuentra la Gran Barrera de Coral?;Atl�
 arte;facil;¿Quién pintó "El Guernica"?;Dalí;Picasso;Van Gogh;Goya;Picasso
 arte;media;¿Qué artista es conocido por sus pinturas de flores gigantes?;Monet;O'Keeffe;Picasso;Matisse;O'Keeffe
 arte;dificil;¿Qué escultor italiano creó "La Piedad"?;Bernini;Donatello;Miguel Ángel;Rodin;Miguel Ángel
-
