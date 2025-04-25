@@ -76,7 +76,7 @@ def modo1vs1():
     """
     Modo de juego 1vs1 donde los jugadores compiten en varias rondas.
     """
-    funcionesTxt.leer_preguntas()
+    funcionesTxt.leerPreguntas()
     print("\n🕹️ Bienvenidos al modo *1 vs 1*! 🕹️")
     print("🔥 Que gane el mejor... ¡A jugar!\n")
 
