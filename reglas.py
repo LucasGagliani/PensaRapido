@@ -1,4 +1,4 @@
-def mostrar_reglas():
+def mostrarReglas():
     print("\n" + "=" * 60)
     print("🎉  ¡BIENVENIDO A PENSÁ RÁPIDO!  🎉")
     print("=" * 60)
@@ -32,3 +32,5 @@ def mostrar_reglas():
 
     print("🎊 ¡Divertite y pensá rápido!")
     print("=" * 60 + "\n")
+    
+    input("🔄 Presiona Enter para volver al menú...") 
