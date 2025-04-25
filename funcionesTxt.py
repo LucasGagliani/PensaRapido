@@ -23,7 +23,7 @@ def pedir_pregunta():
 """
 
 
-def leer_preguntas():
+def leerPreguntas():
     with open('preguntas.txt', 'r', encoding='utf-8') as archivo:
         for numero_linea, linea in enumerate(archivo, start=1):
             datos = linea.strip().split(';')
