@@ -1,26 +1,8 @@
-preguntasMatriz = [
+preguntasTupla = (
     [[] for i in range(5)],
     [[] for i in range(5)],
     [[] for i in range(5)]
-]
-
-""""def crear_archivo():
-    with open('preguntas.txt', 'w') as archivo:
-        archivo.write('')
-    print("archivo 'preguntas.txt' creado con éxito.")
-
-def agregar_pregunta(pregunta, categoria,dificultad,respuesta):
-    with open('preguntas.txt', 'a') as archivo:
-        archivo.write(f'{pregunta};{categoria};{dificultad};{respuesta}\n')
-    print("Pregunta agregada con éxito.")
-
-def pedir_pregunta():
-    pregunta = input("Ingrese la pregunta: ")
-    categoria = input("Ingrese la categoria: ")
-    dificultad = input("Ingrese la dificultad: ")
-    respuesta = input("Ingrese la respuesta: ")
-    agregar_pregunta(pregunta, categoria, dificultad, respuesta)
-"""
+)
 
 
 def leerPreguntas():
@@ -42,17 +24,9 @@ def leerPreguntas():
                 print(f"❌ Dificultad o categoría inválida en línea {numero_linea}: {linea.strip()}")
                 continue
             
-            preguntasMatriz[fila][columna].append({
+            preguntasTupla[fila][columna].append({
                 'pregunta': pregunta,
                 'opciones': opciones,
                 'respuestaCorrecta': respuestaCorrecta
             })
 
-# Mostrar la matriz
-    """print("Preguntas organizadas:")
-    for i, fila in enumerate(preguntasMatriz):
-        dificultad = ['facil', 'media', 'dificil'][i]
-        print(f"Dificultad {dificultad}:")
-        for j, preguntas in enumerate(fila):
-            categoria = ['geografía', 'historia', 'ciencia', 'deporte','arte'][j]
-            print(f"  Categoría {categoria}: {preguntas}")"""

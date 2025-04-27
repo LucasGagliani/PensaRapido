@@ -1,7 +1,7 @@
 import funcionesTxt
 import random  # Importar random para elegir preguntas aleatorias
 
-preguntasMatriz = funcionesTxt.preguntasMatriz
+preguntasTupla = funcionesTxt.preguntasTupla
 
 validar_nombre = lambda nombre: nombre != "" and nombre.isalpha() and len(nombre) >= 3 and len(nombre) <= 20
 
@@ -92,7 +92,7 @@ def modo1vs1():
         print("\n⚙️ Elegí una dificultad:")
         dificultadIndex = mostrarOpciones(dificultades)
 
-        preguntasDisponibles = preguntasMatriz[dificultadIndex][categoriaIndex]
+        preguntasDisponibles = preguntasTupla[dificultadIndex][categoriaIndex]
         preguntasFiltradas = [pregunta for pregunta in preguntasDisponibles if pregunta not in preguntasUsadas]
 
         if len(preguntasFiltradas) == 0:
@@ -127,7 +127,7 @@ def modo1vs1():
         print("\n⚙️ Elegí una dificultad:")
         dificultadIndex = mostrarOpciones(dificultades)
 
-        preguntasDisponibles = preguntasMatriz[dificultadIndex][categoriaIndex]
+        preguntasDisponibles = preguntasTupla[dificultadIndex][categoriaIndex]
         preguntasFiltradas = [p for p in preguntasDisponibles if p not in preguntasUsadas]
 
         if len(preguntasFiltradas) == 0:
@@ -168,12 +168,12 @@ def modo1vs1():
 
         while puntajes[0] == puntajes[1]:
             print(f"\n🔵 Turno de desempate para {nombreJugador1}")
-            resultado1 = hacerPreguntaAleatoria(preguntasMatriz)
+            resultado1 = hacerPreguntaAleatoria(preguntasTupla)
             if resultado1:
                 puntajes[0] += 10  
 
             print(f"\n🔴 Turno de desempate para {nombreJugador2}")
-            resultado2 = hacerPreguntaAleatoria(preguntasMatriz)
+            resultado2 = hacerPreguntaAleatoria(preguntasTupla)
             if resultado2:
                 puntajes[1] += 10  
 
