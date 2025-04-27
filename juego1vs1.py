@@ -162,13 +162,29 @@ def modo1vs1():
     print(f"   🔵 {nombreJugador1}: {puntajes[0]} puntos")
     print(f"   🔴 {nombreJugador2}: {puntajes[1]} puntos")
     print("--------------------------------------------------")
+     # Si hay empate, iniciamos el desempate
+    if puntajes[0] == puntajes[1]:
+        print("\n⚡ ¡Empate! Vamos a un desempate rápido. ⚡")
+
+        while puntajes[0] == puntajes[1]:
+            print(f"\n🔵 Turno de desempate para {nombreJugador1}")
+            resultado1 = hacerPreguntaAleatoria(preguntasMatriz)
+            if resultado1:
+                puntajes[0] += 10  
+
+            print(f"\n🔴 Turno de desempate para {nombreJugador2}")
+            resultado2 = hacerPreguntaAleatoria(preguntasMatriz)
+            if resultado2:
+                puntajes[1] += 10  
+
+            print(f"\n⚖️ Puntajes de desempate: {nombreJugador1}: {puntajes[0]} - {nombreJugador2}: {puntajes[1]}")
+
+        print("\n🏆 ¡Desempate finalizado!")
 
     if puntajes[0] > puntajes[1]:
         print(f"🥇 ¡Ganó {nombreJugador1}! 🏆")
-    elif puntajes[1] > puntajes[0]:
-        print(f"🥇 ¡Ganó {nombreJugador2}! 🏆")
     else:
-        print("🤝 ¡Empate! ¡Ambos jugaron excelente!")
+        print(f"🥇 ¡Ganó {nombreJugador2}! 🏆")
     
     print("--------------------------------------------------")
     input("🔄 Presiona Enter para volver al menú...")
