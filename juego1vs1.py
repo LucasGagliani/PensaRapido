@@ -5,7 +5,7 @@ preguntasTupla = funcionesTxt.preguntasTupla
 
 validar_nombre = lambda nombre: nombre != "" and nombre.isalpha() and len(nombre) >= 3 and len(nombre) <= 20
 
-def pedir_nombre(jugador_num):
+def pedirNombre(jugador_num):
     while True:
         print("🎮--------------------------------------------------")
         nombre = input(f"🧑 Nombre del Jugador {jugador_num}: ")
@@ -71,8 +71,8 @@ def modo1vs1():
     print("\n🕹️ Bienvenidos al modo *1 vs 1*! 🕹️")
     print("🔥 Que gane el mejor... ¡A jugar!\n")
 
-    nombreJugador1 = pedir_nombre(1)
-    nombreJugador2 = pedir_nombre(2)
+    nombreJugador1 = pedirNombre(1)
+    nombreJugador2 = pedirNombre(2)
     puntajes = [0, 0]
 
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
