@@ -77,7 +77,7 @@ def modo1vs1():
 
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
     dificultades = ['facil', 'media', 'dificil']
-    rondas = 1
+    rondas = 5
 
     preguntasUsadas = []  # Lista para registrar preguntas ya usadas
 
