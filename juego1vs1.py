@@ -67,7 +67,8 @@ def hacerPreguntaAleatoria(preguntasMatriz):
         print("❗ Entrada inválida. Intentá de nuevo.")
 
 def modo1vs1():
-    funcionesTxt.leerPreguntas()
+    # funcionesTxt.leerPreguntas()
+
     print("\n🕹️ Bienvenidos al modo *1 vs 1*! 🕹️")
     print("🔥 Que gane el mejor... ¡A jugar!\n")
 
