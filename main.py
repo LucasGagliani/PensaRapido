@@ -31,7 +31,7 @@ while True:
     if opcion == "1":
         juego1vs1.modo1vs1()
     elif opcion == "2":
-        modoTiempo.modoTiempo() 
+        modoTiempo.modoContraReloj()
     elif opcion == "3":
         ranking.mostrarRanking() 
     elif opcion == "4":
