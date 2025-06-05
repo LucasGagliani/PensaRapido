@@ -3,6 +3,7 @@ import random
 import time
 import threading
 import juego1vs1
+import ranking
 
 preguntasMatriz = funcionesTxt.preguntasTupla
 PENALIZACION_TIEMPO = 10  # segundos extra por respuesta incorrecta o timeout
@@ -69,11 +70,6 @@ def modoContraReloj():
     print("❌ Cada error o entrada inválida suma +10 segundos al tiempo total.\n")
     nombreJugador1 = juego1vs1.pedirNombre(1)
     nombreJugador2 = juego1vs1.pedirNombre(2)
-    #nombre1 = input("🧑 Nombre del Jugador 1: ")
-    #nombreJugador1 = nombre1 if validar_nombre(nombre1) else "Jugador1"
-
-    #nombre2 = input("🧑 Nombre del Jugador 2: ")
-    #nombreJugador2 = nombre2 if validar_nombre(nombre2) else "Jugador2"
 
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
     dificultades = ['facil', 'media', 'dificil']
@@ -107,11 +103,16 @@ def modoContraReloj():
     print(f"🔵 {nombreJugador1}: ⏱️ {round(tiempos_totales[0], 2)} segundos totales - {correctas[0]} correctas")
     print(f"🔴 {nombreJugador2}: ⏱️ {round(tiempos_totales[1], 2)} segundos totales - {correctas[1]} correctas")
 
+    # Guardar resultados en el ranking (modificado para el nuevo sistema)
     if tiempos_totales[0] < tiempos_totales[1]:
-        print(f"🏆 ¡Ganó {nombreJugador1} con menor tiempo!")
+        print(f"\n🏆 ¡Ganó {nombreJugador1} con menor tiempo!")
+        ranking.guardar_resultado(nombreJugador1, correctas[0], "ContraReloj", round(tiempos_totales[0], 2))
     elif tiempos_totales[1] < tiempos_totales[0]:
-        print(f"🏆 ¡Ganó {nombreJugador2} con menor tiempo!")
+        print(f"\n🏆 ¡Ganó {nombreJugador2} con menor tiempo!")
+        ranking.guardar_resultado(nombreJugador2, correctas[1], "ContraReloj", round(tiempos_totales[1], 2))
     else:
-        print("🤝 ¡Empate perfecto!")
+        print("\n🤝 ¡Empate perfecto!")
+        ranking.guardar_resultado(nombreJugador1, correctas[0], "ContraReloj", round(tiempos_totales[0], 2))
+        ranking.guardar_resultado(nombreJugador2, correctas[1], "ContraReloj", round(tiempos_totales[1], 2))
 
     input("\n🔄 Presiona Enter para volver al menú...")

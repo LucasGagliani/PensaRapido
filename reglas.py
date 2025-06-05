@@ -25,10 +25,11 @@ def mostrarReglas():
     print("     🔴 Difícil: +30 puntos")
     print("   🏆 Gana quien tenga más puntos al final.\n")
 
-    # Descomentar cuando actives el ranking
-    # print("📈 RANKING:")
-    # print("📝 Al finalizar el modo por tiempo, tu tiempo se guarda en 'ranking.txt'.")
-    # print("🏅 Se muestran los 20 mejores tiempos y tu posición actual.\n")
+    print("📈 RANKING:")
+    print("📝 Al finalizar el modo por tiempo, tu tiempo se guarda en 'ranking_tiempo.txt'.")
+    print("📝 Al finalizar el modo 1v1, tu puntaje ganador se guarda en 'ranking_1vs1.txt'.")
+
+    print("🏅 Se muestran los 20 mejores tiempos y tu posición actual además de los mejores rankeados del 1vs1.\n")
 
     print("🎊 ¡Divertite y pensá rápido!")
     print("=" * 60 + "\n")
