@@ -3,13 +3,10 @@ import random
 import time
 import threading
 import juego1vs1
+import ranking
 
-preguntasMatriz = funcionesTxt.preguntasTupla
 PENALIZACION_TIEMPO = 10  # segundos extra por respuesta incorrecta o timeout
 TIEMPO_LIMITE = 30        # máximo de 30 segundos por pregunta
-
-# Validación simple
-validar_nombre = lambda nombre: nombre.isalpha() and len(nombre) > 0
 
 def pedir_respuesta_con_tiempo():
     respuesta = [None]
@@ -58,22 +55,18 @@ def hacerPregunta(nombre, pregunta):
                 print(f"❌ Incorrecto. La respuesta correcta era: {pregunta['respuestaCorrecta']}")
                 return False, tiempo_respuesta + PENALIZACION_TIEMPO
 
-    # Entrada inválida
     print("❌ Entrada inválida. Se cuenta como incorrecta.")
     return False, tiempo_respuesta + PENALIZACION_TIEMPO
 
 def modoContraReloj():
     funcionesTxt.leerPreguntas()
+    preguntasMatriz = funcionesTxt.preguntasTupla
     print("\n⏱️ ¡Bienvenidos al modo *Contra Reloj*!")
     print("🎯 Cada jugador responderá 5 preguntas con un límite de 30 segundos por pregunta.")
     print("❌ Cada error o entrada inválida suma +10 segundos al tiempo total.\n")
+
     nombreJugador1 = juego1vs1.pedirNombre(1)
     nombreJugador2 = juego1vs1.pedirNombre(2)
-    #nombre1 = input("🧑 Nombre del Jugador 1: ")
-    #nombreJugador1 = nombre1 if validar_nombre(nombre1) else "Jugador1"
-
-    #nombre2 = input("🧑 Nombre del Jugador 2: ")
-    #nombreJugador2 = nombre2 if validar_nombre(nombre2) else "Jugador2"
 
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
     dificultades = ['facil', 'media', 'dificil']
@@ -107,11 +100,15 @@ def modoContraReloj():
     print(f"🔵 {nombreJugador1}: ⏱️ {round(tiempos_totales[0], 2)} segundos totales - {correctas[0]} correctas")
     print(f"🔴 {nombreJugador2}: ⏱️ {round(tiempos_totales[1], 2)} segundos totales - {correctas[1]} correctas")
 
-    if tiempos_totales[0] < tiempos_totales[1]:
-        print(f"🏆 ¡Ganó {nombreJugador1} con menor tiempo!")
-    elif tiempos_totales[1] < tiempos_totales[0]:
-        print(f"🏆 ¡Ganó {nombreJugador2} con menor tiempo!")
+    # Guardar resultados ordenados por puntaje y tiempo
+    ranking.guardar_resultado(nombreJugador1, correctas[0], round(tiempos_totales[0], 2))
+    ranking.guardar_resultado(nombreJugador2, correctas[1], round(tiempos_totales[1], 2))
+
+    if (correctas[0] > correctas[1]) or (correctas[0] == correctas[1] and tiempos_totales[0] < tiempos_totales[1]):
+        print(f"\n🏆 ¡Ganó {nombreJugador1} con mejor puntaje y/o tiempo!")
+    elif (correctas[1] > correctas[0]) or (correctas[1] == correctas[0] and tiempos_totales[1] < tiempos_totales[0]):
+        print(f"\n🏆 ¡Ganó {nombreJugador2} con mejor puntaje y/o tiempo!")
     else:
-        print("🤝 ¡Empate perfecto!")
+        print("\n🤝 ¡Empate!")
 
     input("\n🔄 Presiona Enter para volver al menú...")
