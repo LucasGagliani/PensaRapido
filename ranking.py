@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-ARCHIVO_RANKING = 'ranking_contrareloj.csv'
+ARCHIVO_RANKING = 'puntuaciones.csv'
 
 def guardar_resultado(nombre, puntaje, tiempo):
     # Crear archivo si no existe con cabecera

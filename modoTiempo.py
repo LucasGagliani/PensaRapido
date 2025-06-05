@@ -2,7 +2,6 @@ import funcionesTxt
 import random
 import time
 import threading
-import juego1vs1
 import ranking
 
 PENALIZACION_TIEMPO = 10  # segundos extra por respuesta incorrecta o timeout
@@ -61,54 +60,46 @@ def hacerPregunta(nombre, pregunta):
 def modoContraReloj():
     funcionesTxt.leerPreguntas()
     preguntasMatriz = funcionesTxt.preguntasTupla
-    print("\n⏱️ ¡Bienvenidos al modo *Contra Reloj*!")
-    print("🎯 Cada jugador responderá 5 preguntas con un límite de 30 segundos por pregunta.")
+    print("\n⏱️ ¡Bienvenid@ al modo *Contra Reloj*!")
+    print("🎯 Vas a responder 10 preguntas con un límite de 30 segundos por pregunta.")
     print("❌ Cada error o entrada inválida suma +10 segundos al tiempo total.\n")
 
-    nombreJugador1 = juego1vs1.pedirNombre(1)
-    nombreJugador2 = juego1vs1.pedirNombre(2)
+    nombreJugador = input("👉 Ingresá tu nombre: ").strip()
+    if not nombreJugador:
+        nombreJugador = "Jugador"
 
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
     dificultades = ['facil', 'media', 'dificil']
 
-    tiempos_totales = [0, 0]
-    correctas = [0, 0]
+    tiempo_total = 0
+    correctas = 0
     preguntasUsadas = []
 
-    for turno in range(5):
-        for idx, nombre in enumerate([nombreJugador1, nombreJugador2]):
-            print(f"\n🎯 Turno {turno + 1} para {nombre}")
+    for turno in range(10):
+        print(f"\n🎯 Pregunta {turno + 1} de 10")
 
-            categoriaIndex = random.randint(0, len(categorias) - 1)
-            dificultadIndex = random.randint(0, len(dificultades) - 1)
+        categoriaIndex = random.randint(0, len(categorias) - 1)
+        dificultadIndex = random.randint(0, len(dificultades) - 1)
 
-            preguntasDisponibles = preguntasMatriz[dificultadIndex][categoriaIndex]
-            preguntasFiltradas = [p for p in preguntasDisponibles if p not in preguntasUsadas]
+        preguntasDisponibles = preguntasMatriz[dificultadIndex][categoriaIndex]
+        preguntasFiltradas = [p for p in preguntasDisponibles if p not in preguntasUsadas]
 
-            if preguntasFiltradas:
-                pregunta = random.choice(preguntasFiltradas)
-                preguntasUsadas.append(pregunta)
-                fueCorrecta, tiempo = hacerPregunta(nombre, pregunta)
-                tiempos_totales[idx] += tiempo
-                if fueCorrecta:
-                    correctas[idx] += 1
-            else:
-                print("🚫 No hay preguntas disponibles. Se penaliza con +10 segundos.")
-                tiempos_totales[idx] += PENALIZACION_TIEMPO
+        if preguntasFiltradas:
+            pregunta = random.choice(preguntasFiltradas)
+            preguntasUsadas.append(pregunta)
+            fueCorrecta, tiempo = hacerPregunta(nombreJugador, pregunta)
+            tiempo_total += tiempo
+            if fueCorrecta:
+                correctas += 1
+        else:
+            print("🚫 No hay preguntas disponibles. Se penaliza con +10 segundos.")
+            tiempo_total += PENALIZACION_TIEMPO
 
     print("\n🏁 ¡Fin del juego! Resultados:")
-    print(f"🔵 {nombreJugador1}: ⏱️ {round(tiempos_totales[0], 2)} segundos totales - {correctas[0]} correctas")
-    print(f"🔴 {nombreJugador2}: ⏱️ {round(tiempos_totales[1], 2)} segundos totales - {correctas[1]} correctas")
+    print(f"⏱️ Tiempo total: {round(tiempo_total, 2)} segundos")
+    print(f"✅ Respuestas correctas: {correctas} de 10")
 
-    # Guardar resultados ordenados por puntaje y tiempo
-    ranking.guardar_resultado(nombreJugador1, correctas[0], round(tiempos_totales[0], 2))
-    ranking.guardar_resultado(nombreJugador2, correctas[1], round(tiempos_totales[1], 2))
-
-    if (correctas[0] > correctas[1]) or (correctas[0] == correctas[1] and tiempos_totales[0] < tiempos_totales[1]):
-        print(f"\n🏆 ¡Ganó {nombreJugador1} con mejor puntaje y/o tiempo!")
-    elif (correctas[1] > correctas[0]) or (correctas[1] == correctas[0] and tiempos_totales[1] < tiempos_totales[0]):
-        print(f"\n🏆 ¡Ganó {nombreJugador2} con mejor puntaje y/o tiempo!")
-    else:
-        print("\n🤝 ¡Empate!")
+    # Guardar resultado en el archivo puntuaciones.csv
+    ranking.guardar_resultado(nombreJugador, correctas, round(tiempo_total, 2))
 
     input("\n🔄 Presiona Enter para volver al menú...")
