@@ -1,9 +1,6 @@
 import funcionesTxt
-import random
-import ranking
+import random  # Importar random para elegir preguntas aleatorias
 
-# Cargar preguntas al inicio del módulo
-funcionesTxt.leerPreguntas()
 preguntasTupla = funcionesTxt.preguntasTupla
 
 validar_nombre = lambda nombre: nombre != "" and nombre.isalpha() and len(nombre) >= 3 and len(nombre) <= 20
@@ -44,14 +41,14 @@ def hacerPreguntaAleatoria(preguntasMatriz):
 
     if len(preguntasDisponibles) == 0:
         print("\n🚫 No hay preguntas disponibles en esta categoría y dificultad.")
-        return None
+        return
 
     pregunta = random.choice(preguntasDisponibles)
     print("\n🧠 Pregunta seleccionada:")
     print(f"❓ {pregunta['pregunta']}")
 
     opciones = pregunta['opciones'][:]
-    random.shuffle(opciones)
+    random.shuffle(opciones)  # Mezclar el orden de las opciones
 
     print("\n📌 Opciones:")
     for i, opcion in enumerate(opciones):
@@ -70,6 +67,8 @@ def hacerPreguntaAleatoria(preguntasMatriz):
         print("❗ Entrada inválida. Intentá de nuevo.")
 
 def modo1vs1():
+    funcionesTxt.leerPreguntas()
+
     print("\n🕹️ Bienvenidos al modo *1 vs 1*! 🕹️")
     print("🔥 Que gane el mejor... ¡A jugar!\n")
 
@@ -81,7 +80,7 @@ def modo1vs1():
     dificultades = ['facil', 'media', 'dificil']
     rondas = 5
 
-    preguntasUsadas = []
+    preguntasUsadas = []  # Lista para registrar preguntas ya usadas
 
     for ronda in range(rondas):
         print(f"\n🎲 Ronda {ronda + 1} de {rondas}")
@@ -95,40 +94,32 @@ def modo1vs1():
         dificultadIndex = mostrarOpciones(dificultades)
 
         preguntasDisponibles = preguntasTupla[dificultadIndex][categoriaIndex]
-        preguntasFiltradas = [p for p in preguntasDisponibles if p not in preguntasUsadas]
+        preguntasFiltradas = [pregunta for pregunta in preguntasDisponibles if pregunta not in preguntasUsadas]
 
-        if not preguntasFiltradas:
+        if len(preguntasFiltradas) == 0:
             print("🚫 No hay más preguntas disponibles sin repetir en esta categoría y dificultad.")
-            # Seleccionar cualquier pregunta si no hay disponibles sin repetir
-            if preguntasDisponibles:
-                preguntaSeleccionada = random.choice(preguntasDisponibles)
-            else:
-                print("⚠️ No hay preguntas en esta categoría/dificultad. Saltando turno.")
-                continue
         else:
             preguntaSeleccionada = random.choice(preguntasFiltradas)
-        
-        preguntasUsadas.append(preguntaSeleccionada)
-        print(f"\n❓ {preguntaSeleccionada['pregunta']}")
-        
-        opciones = preguntaSeleccionada['opciones'][:]
-        random.shuffle(opciones)
+            preguntasUsadas.append(preguntaSeleccionada)
+            print(f"\n❓ {preguntaSeleccionada['pregunta']}")
+            
+            opciones = preguntaSeleccionada['opciones'][:]
+            random.shuffle(opciones)
 
-        print("\n🔢 Opciones:")
-        for i, opcion in enumerate(opciones):
-            print(f"   {i+1}. {opcion}")
-        
-        while True:
-            respuesta = input("\n👉 Elegí la respuesta (número): ")
-            if respuesta.isdigit() and 1 <= int(respuesta) <= len(opciones):
-                seleccion = opciones[int(respuesta) - 1]
-                if seleccion == preguntaSeleccionada['respuestaCorrecta']:
-                    print("✅ ¡Correcto!")
-                    puntajes[0] += (dificultadIndex + 1) * 10
-                else:
-                    print(f"❌ Incorrecto. La respuesta correcta era: {preguntaSeleccionada['respuestaCorrecta']}")
-                break
-            print("❗ Entrada inválida. Intentá de nuevo.")
+            print("\n🔢 Opciones:")
+            for i, opcion in enumerate(opciones):
+                print(f"   {i+1}. {opcion}")
+            while True:
+                respuesta = input("\n👉 Elegí la respuesta (número): ")
+                if respuesta.isdigit() and 1 <= int(respuesta) <= len(opciones):
+                    seleccion = opciones[int(respuesta) - 1]
+                    if seleccion == preguntaSeleccionada['respuestaCorrecta']:
+                        print("✅ ¡Correcto!")
+                        puntajes[0] += (dificultadIndex + 1) * 10
+                    else:
+                        print(f"❌ Incorrecto. La respuesta correcta era: {preguntaSeleccionada['respuestaCorrecta']}")
+                    break
+                print("❗ Entrada inválida. Intentá de nuevo.")
 
         # Turno Jugador 2
         print(f"\n🔴 Turno de {nombreJugador2}")
@@ -140,37 +131,30 @@ def modo1vs1():
         preguntasDisponibles = preguntasTupla[dificultadIndex][categoriaIndex]
         preguntasFiltradas = [p for p in preguntasDisponibles if p not in preguntasUsadas]
 
-        if not preguntasFiltradas:
+        if len(preguntasFiltradas) == 0:
             print("🚫 No hay más preguntas disponibles sin repetir en esta categoría y dificultad.")
-            if preguntasDisponibles:
-                preguntaSeleccionada = random.choice(preguntasDisponibles)
-            else:
-                print("⚠️ No hay preguntas en esta categoría/dificultad. Saltando turno.")
-                continue
         else:
             preguntaSeleccionada = random.choice(preguntasFiltradas)
-        
-        preguntasUsadas.append(preguntaSeleccionada)
-        print(f"\n❓ {preguntaSeleccionada['pregunta']}")
-        
-        opciones = preguntaSeleccionada['opciones'][:]
-        random.shuffle(opciones)
+            preguntasUsadas.append(preguntaSeleccionada)
+            print(f"\n❓ {preguntaSeleccionada['pregunta']}")
+            
+            opciones = preguntaSeleccionada['opciones'][:]
+            random.shuffle(opciones)
 
-        print("\n🔢 Opciones:")
-        for i, opcion in enumerate(opciones):
-            print(f"   {i+1}. {opcion}")
-        
-        while True:
-            respuesta = input("\n👉 Elegí la respuesta (número): ")
-            if respuesta.isdigit() and 1 <= int(respuesta) <= len(opciones):
-                seleccion = opciones[int(respuesta) - 1]
-                if seleccion == preguntaSeleccionada['respuestaCorrecta']:
-                    print("✅ ¡Correcto!")
-                    puntajes[1] += (dificultadIndex + 1) * 10
-                else:
-                    print(f"❌ Incorrecto. La respuesta correcta era: {preguntaSeleccionada['respuestaCorrecta']}")
-                break
-            print("❗ Entrada inválida. Intentá de nuevo.")
+            print("\n🔢 Opciones:")
+            for i, opcion in enumerate(opciones):
+                print(f"   {i+1}. {opcion}")
+            while True:
+                respuesta = input("\n👉 Elegí la respuesta (número): ")
+                if respuesta.isdigit() and 1 <= int(respuesta) <= len(opciones):
+                    seleccion = opciones[int(respuesta) - 1]
+                    if seleccion == preguntaSeleccionada['respuestaCorrecta']:
+                        print("✅ ¡Correcto!")
+                        puntajes[1] += (dificultadIndex + 1) * 10
+                    else:
+                        print(f"❌ Incorrecto. La respuesta correcta era: {preguntaSeleccionada['respuestaCorrecta']}")
+                    break
+                print("❗ Entrada inválida. Intentá de nuevo.")
 
     # Resultado final
     print("\n🎉 ¡Partida terminada! 🎉")
@@ -179,30 +163,30 @@ def modo1vs1():
     print(f"   🔵 {nombreJugador1}: {puntajes[0]} puntos")
     print(f"   🔴 {nombreJugador2}: {puntajes[1]} puntos")
     print("--------------------------------------------------")
-    
-    # Desempate si hay empate
+     # Si hay empate, iniciamos el desempate
     if puntajes[0] == puntajes[1]:
         print("\n⚡ ¡Empate! Vamos a un desempate rápido. ⚡")
+
         while puntajes[0] == puntajes[1]:
             print(f"\n🔵 Turno de desempate para {nombreJugador1}")
-            if hacerPreguntaAleatoria(preguntasTupla) is not None:
-                if hacerPreguntaAleatoria(preguntasTupla):
-                    puntajes[0] += 10
+            resultado1 = hacerPreguntaAleatoria(preguntasTupla)
+            if resultado1:
+                puntajes[0] += 10  
 
             print(f"\n🔴 Turno de desempate para {nombreJugador2}")
-            if hacerPreguntaAleatoria(preguntasTupla) is not None:
-                if hacerPreguntaAleatoria(preguntasTupla):
-                    puntajes[1] += 10
+            resultado2 = hacerPreguntaAleatoria(preguntasTupla)
+            if resultado2:
+                puntajes[1] += 10  
 
             print(f"\n⚖️ Puntajes de desempate: {nombreJugador1}: {puntajes[0]} - {nombreJugador2}: {puntajes[1]}")
 
-    # Determinar ganador
+        print("\n🏆 ¡Desempate finalizado!")
+
     if puntajes[0] > puntajes[1]:
-        print(f"\n🥇 ¡Ganó {nombreJugador1}! 🏆")
-        ranking.guardar_resultado(nombreJugador1, puntajes[0], "1vs1")
+        print(f"🥇 ¡Ganó {nombreJugador1}! 🏆")
     else:
-        print(f"\n🥇 ¡Ganó {nombreJugador2}! 🏆")
-        ranking.guardar_resultado(nombreJugador2, puntajes[1], "1vs1")
+        print(f"🥇 ¡Ganó {nombreJugador2}! 🏆")
     
     print("--------------------------------------------------")
     input("🔄 Presiona Enter para volver al menú...")
+    

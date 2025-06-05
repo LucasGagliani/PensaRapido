@@ -12,10 +12,10 @@ def mostrarReglas():
     print("🎮 MODOS DE JUEGO:")
 
     # Descomentar cuando actives el modo por tiempo
-    # print("\n⏱️  Modo por Tiempo:")
-    # print("   🔄 Responde preguntas aleatorias antes de que se acabe el tiempo.")
-    # print("   ❌ Las respuestas incorrectas agregan +10 segundos.")
-    # print("   🏆 Se muestra un ranking con los 20 mejores tiempos.")
+    print("\n⏱️  Modo por Tiempo:")
+    print("   🔄 Responde preguntas aleatorias antes de que se acabe el tiempo.")
+    print("   ❌ Las respuestas incorrectas agregan +10 segundos.")
+    print("   🏆 Se muestra un ranking con los 20 mejores tiempos.")
 
     print("\n🤜🤛 Modo 1 vs 1:")
     print("   👥 Dos jugadores se turnan para responder.")
