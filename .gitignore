@@ -43,3 +43,7 @@ build/
 dist/
 *.egg-info/
 .eggs/
+
+# Rankings
+ranking_1vs1.csv
+ranking_tiempo.csv

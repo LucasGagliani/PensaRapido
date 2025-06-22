@@ -12,10 +12,10 @@ def mostrarReglas():
     print("🎮 MODOS DE JUEGO:")
 
     # Descomentar cuando actives el modo por tiempo
-    # print("\n⏱️  Modo por Tiempo:")
-    # print("   🔄 Responde preguntas aleatorias antes de que se acabe el tiempo.")
-    # print("   ❌ Las respuestas incorrectas agregan +10 segundos.")
-    # print("   🏆 Se muestra un ranking con los 20 mejores tiempos.")
+    print("\n⏱️  Modo por Tiempo:")
+    print("   🔄 Responde preguntas aleatorias antes de que se acabe el tiempo.")
+    print("   ❌ Las respuestas incorrectas agregan +10 segundos.")
+    print("   🏆 Se muestra un ranking con los 20 mejores tiempos.")
 
     print("\n🤜🤛 Modo 1 vs 1:")
     print("   👥 Dos jugadores se turnan para responder.")
@@ -25,10 +25,11 @@ def mostrarReglas():
     print("     🔴 Difícil: +30 puntos")
     print("   🏆 Gana quien tenga más puntos al final.\n")
 
-    # Descomentar cuando actives el ranking
-    # print("📈 RANKING:")
-    # print("📝 Al finalizar el modo por tiempo, tu tiempo se guarda en 'ranking.txt'.")
-    # print("🏅 Se muestran los 20 mejores tiempos y tu posición actual.\n")
+    print("📈 RANKING:")
+    print("📝 Al finalizar el modo por tiempo, tu tiempo se guarda en 'ranking_tiempo.txt'.")
+    print("📝 Al finalizar el modo 1v1, tu puntaje ganador se guarda en 'ranking_1vs1.txt'.")
+
+    print("🏅 Se muestran los 20 mejores tiempos y tu posición actual además de los mejores rankeados del 1vs1.\n")
 
     print("🎊 ¡Divertite y pensá rápido!")
     print("=" * 60 + "\n")

@@ -16,8 +16,8 @@ def mostrarMenu():
     print("=" * 70)
     print("📋 MENÚ PRINCIPAL:")
     print("1️⃣  Jugar Modo 1 vs 1")
-    print("2️⃣  Jugar Modo por Tiempo")  # Activar cuando esté implementado
-    print("3️⃣  Ver Ranking")            # Activar cuando esté implementado
+    print("2️⃣  Jugar Modo por Tiempo") 
+    print("3️⃣  Ver Ranking")         
     print("4️⃣  Ver Reglas del Juego")
     print("5️⃣  Salir")
     print("=" * 70 + "\n")
@@ -33,7 +33,8 @@ while True:
     elif opcion == "2":
         modoTiempo.modoContraReloj()
     elif opcion == "3":
-        ranking.mostrarRanking() 
+        ranking.mostrarRanking()
+        input("\n🔄 Presiona Enter para volver al menú...")  # <-- Acá está la clave
     elif opcion == "4":
         reglas.mostrarReglas()
     elif opcion == "5":
