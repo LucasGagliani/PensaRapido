@@ -3,7 +3,7 @@ from datetime import datetime
 
 ARCHIVO_RANKING = 'puntuaciones.csv'
 
-def guardar_resultado(nombre, puntaje, tiempo):
+def guardarResultado(nombre, puntaje, tiempo):
     """
     Guarda un nuevo resultado en el archivo de ranking y actualiza la tabla con orden y posiciones.
 
