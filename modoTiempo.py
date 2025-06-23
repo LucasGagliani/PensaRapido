@@ -8,6 +8,15 @@ PENALIZACION_TIEMPO = 10  # segundos extra por respuesta incorrecta o timeout
 TIEMPO_LIMITE = 30        # máximo de 30 segundos por pregunta
 
 def pedir_respuesta_con_tiempo():
+    """
+    Solicita una respuesta numérica del usuario con un límite de tiempo.
+
+    Inicia un hilo para esperar la entrada del usuario y permite un tiempo máximo
+    definido por `TIEMPO_LIMITE`. Si el usuario no responde a tiempo, retorna None.
+
+    Retorna:
+        str or None: La respuesta ingresada por el usuario como cadena, o None si se agotó el tiempo.
+    """
     respuesta = [None]
 
     def obtener_respuesta():
@@ -19,11 +28,30 @@ def pedir_respuesta_con_tiempo():
 
     if hilo.is_alive():
         print("⏰ ¡Tiempo agotado!")
-        hilo.join()  # Forzar a que termine
+        hilo.join() 
         return None
     return respuesta[0]
 
+
 def hacerPregunta(nombre, pregunta):
+    """
+    Presenta una pregunta al jugador, mide el tiempo de respuesta y evalúa su respuesta.
+
+    Muestra la pregunta y opciones desordenadas, solicita la respuesta con límite de tiempo,
+    y devuelve si la respuesta fue correcta junto con el tiempo que tardó o la penalización.
+
+    Parámetros:
+    nombre (str): Nombre del jugador a quien se le hace la pregunta.
+    pregunta (dict): Diccionario con las claves:
+        - 'pregunta' (str): Texto de la pregunta.
+        - 'opciones' (list): Lista de opciones posibles.
+        - 'respuestaCorrecta' (str): Opción correcta.
+
+    Retorna:
+    tuple (bool, float):  
+        - bool: True si la respuesta es correcta, False si es incorrecta o inválida o tiempo agotado.  
+        - float: Tiempo en segundos que tardó en responder (incluye penalización si aplica).
+    """
     print(f"\n❓ {nombre}, respondé esta pregunta:")
     print(pregunta["pregunta"])
 
@@ -58,6 +86,19 @@ def hacerPregunta(nombre, pregunta):
     return False, tiempo_respuesta + PENALIZACION_TIEMPO
 
 def modoContraReloj():
+    """
+    Ejecuta el modo de juego 'Contra Reloj', donde el jugador debe responder 10 preguntas
+    con un límite de tiempo por pregunta y penalizaciones por errores o entradas inválidas.
+
+    El jugador ingresa su nombre y responde preguntas aleatorias de categorías y dificultades
+    variadas. Cada respuesta incorrecta o inválida suma una penalización de tiempo.
+
+    Al finalizar, muestra el tiempo total y la cantidad de respuestas correctas, y guarda
+    el resultado en el ranking.
+
+    No recibe parámetros ni retorna valores; toda la interacción es por consola.
+    """
+
     funcionesTxt.leerPreguntas()
     preguntasMatriz = funcionesTxt.preguntasTupla
     print("\n⏱️ ¡Bienvenid@ al modo *Contra Reloj*!")
@@ -99,7 +140,6 @@ def modoContraReloj():
     print(f"⏱️ Tiempo total: {round(tiempo_total, 2)} segundos")
     print(f"✅ Respuestas correctas: {correctas} de 10")
 
-    # Guardar resultado en el archivo puntuaciones.csv
     ranking.guardar_resultado(nombreJugador, correctas, round(tiempo_total, 2))
 
     input("\n🔄 Presiona Enter para volver al menú...")

@@ -1,33 +1,82 @@
 import funcionesTxt
-import random  # Importar random para elegir preguntas aleatorias
+import random
 
 preguntasTupla = funcionesTxt.preguntasTupla
 
 validar_nombre = lambda nombre: nombre != "" and nombre.isalpha() and len(nombre) >= 3 and len(nombre) <= 20
 
+
 def pedirNombre(jugador_num):
-    while True:
+    """
+    Pide al usuario que ingrese un nombre para el jugador indicado por `jugador_num`.
+    Valida que el nombre contenga solo letras (sin números, símbolos ni espacios).
+    Si el nombre es válido, lo devuelve; si no, vuelve a pedirlo.
+
+    Parámetros:
+    jugador_num (int): Número del jugador.
+
+    Retorna:
+    str: Nombre válido del jugador.
+    """
+    nombre_valido = False
+    while not nombre_valido:
         print("🎮--------------------------------------------------")
         nombre = input(f"🧑 Nombre del Jugador {jugador_num}: ")
         if not validar_nombre(nombre):
             print("⚠️ El nombre solo debe contener letras, sin espacios, símbolos, ni números. Intentá de nuevo.")
         else:
+            nombre_valido = True
             print(f"✅ ¡Bienvenido/a, {nombre}! 🎉")
             print("--------------------------------------------------🎮")
-            return nombre
+    return nombre
+
 
 def mostrarOpciones(lista):
+    """
+    Muestra una lista de opciones y devuelve la opción elegida por el usuario.
+
+    Parámetros:
+    lista (list): Lista de opciones a mostrar.
+
+    Retorna:
+    int: Índice (posición) de la opción elegida.
+    """
     for i in range(len(lista)):
         print(f"   {i+1}. {lista[i].capitalize()} 🎯")
-    while True:
+    
+    opcion_valida = False
+    while not opcion_valida:
         entrada = input("👉 Elegí una opción (número): ")
         if entrada.isdigit():
             numero = int(entrada)
             if 1 <= numero <= len(lista):
+                opcion_valida = True
                 return numero - 1
         print("❌ Entrada inválida. Probá de nuevo.")
 
+
 def hacerPreguntaAleatoria(preguntasMatriz):
+    """
+    Muestra una pregunta aleatoria según la categoría y dificultad seleccionadas por el usuario,
+    y evalúa si la respuesta ingresada es correcta.
+
+    El usuario elige una categoría (geografía, historia, ciencia, deporte, arte) y una dificultad
+    (fácil, media, difícil). A partir de esa selección, se elige al azar una pregunta de la matriz
+    `preguntasMatriz`, se muestran las opciones posibles (desordenadas) y se solicita una respuesta.
+
+    Parámetros:
+    preguntasMatriz (list): Matriz de 3 niveles organizada como [dificultad][categoría][pregunta].
+                            Cada pregunta debe ser un diccionario con las claves:
+                            - 'pregunta': str
+                            - 'opciones': list[str]
+                            - 'respuestaCorrecta': str
+
+    Retorna:
+    bool: 
+        - True si la respuesta del usuario es correcta.  
+        - False si es incorrecta.  
+        - None si no hay preguntas disponibles para la categoría y dificultad seleccionadas.
+    """
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
     dificultades = ['facil', 'media', 'dificil']
 
@@ -54,7 +103,8 @@ def hacerPreguntaAleatoria(preguntasMatriz):
     for i, opcion in enumerate(opciones):
         print(f"   {i+1}. {opcion}")
 
-    while True:
+    respuesta_valida = False
+    while not respuesta_valida:
         respuesta = input("\n📝 Elegí la respuesta (número): ")
         if respuesta.isdigit() and 1 <= int(respuesta) <= len(opciones):
             seleccion = opciones[int(respuesta) - 1]
@@ -66,7 +116,25 @@ def hacerPreguntaAleatoria(preguntasMatriz):
                 return False
         print("❗ Entrada inválida. Intentá de nuevo.")
 
+
 def modo1vs1():
+    """
+    Inicia el modo de juego '1 vs 1' entre dos jugadores.
+
+    Cada jugador debe ingresar su nombre. Durante 5 rondas, ambos jugadores responderán
+    preguntas alternadas, eligiendo una categoría y una dificultad en cada turno. Las preguntas 
+    no se repiten dentro de una misma partida. Cada respuesta correcta suma puntos, según la 
+    dificultad (fácil: 10, media: 20, difícil: 30).
+
+    En caso de empate al finalizar las rondas, se ejecuta una ronda de desempate con preguntas
+    aleatorias hasta que uno de los jugadores gane.
+
+    Requiere:
+    - La función `leerPreguntas()` para cargar las preguntas en `preguntasTupla`.
+    - Las funciones `pedirNombre()`, `mostrarOpciones()` y `hacerPreguntaAleatoria()`.
+
+    No recibe parámetros ni retorna valores: la interacción es completamente por consola.
+    """
     funcionesTxt.leerPreguntas()
 
     print("\n🕹️ Bienvenidos al modo *1 vs 1*! 🕹️")

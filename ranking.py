@@ -4,7 +4,26 @@ from datetime import datetime
 ARCHIVO_RANKING = 'puntuaciones.csv'
 
 def guardar_resultado(nombre, puntaje, tiempo):
-    # Crear archivo si no existe con cabecera
+    """
+    Guarda un nuevo resultado en el archivo de ranking y actualiza la tabla con orden y posiciones.
+
+    Si el archivo no existe, lo crea con los encabezados correspondientes. Luego:
+    - Lee los resultados existentes.
+    - Agrega el nuevo resultado con fecha y hora actual.
+    - Ordena los resultados por mayor puntaje y menor tiempo.
+    - Reescribe el archivo con las posiciones actualizadas.
+
+    Parámetros:
+    nombre (str): Nombre del jugador.
+    puntaje (int): Puntaje obtenido en la partida.
+    tiempo (float): Tiempo en segundos que duró la partida.
+
+    Requiere:
+    - La constante global ARCHIVO_RANKING que define el nombre del archivo CSV.
+
+    No retorna ningún valor. Guarda la información directamente en el archivo.
+    """
+    
     if not os.path.exists(ARCHIVO_RANKING):
         with open(ARCHIVO_RANKING, 'w', encoding='utf-8') as f:
             f.write("Posición,Nombre,Puntaje,Tiempo,Fecha,Hora\n")
@@ -12,7 +31,7 @@ def guardar_resultado(nombre, puntaje, tiempo):
     # Leer resultados actuales
     resultados = []
     with open(ARCHIVO_RANKING, 'r', encoding='utf-8') as f:
-        next(f)  # salto header
+        next(f)
         for linea in f:
             partes = linea.strip().split(',')
             if len(partes) == 6:
@@ -47,6 +66,16 @@ def guardar_resultado(nombre, puntaje, tiempo):
             f.write(f"{i},{res['nombre']},{res['puntaje']},{res['tiempo']}s,{res['fecha']},{res['hora']}\n")
 
 def mostrarRanking():
+    """
+    Muestra en consola el ranking de resultados del modo 'Contra Reloj'.
+
+    Lee el archivo definido en `ARCHIVO_RANKING` y presenta una tabla con:
+    posición, nombre del jugador, puntaje, tiempo, fecha y hora de cada resultado.
+
+    Si el archivo no existe o no contiene resultados, muestra un mensaje informativo.
+
+    No recibe parámetros ni retorna valores; toda la salida es por consola.
+    """
     if not os.path.exists(ARCHIVO_RANKING):
         print("🚫 No hay resultados guardados aún.")
         return

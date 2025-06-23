@@ -7,10 +7,29 @@ preguntasTupla = (
     [[] for i in range(5)]   # Nivel de dificultad 3 (difícil)
 )
 
-
-
 def leerPreguntas():
-    # Intenta abrir y procesar el archivo
+    """
+    Lee las preguntas desde el archivo 'preguntas.txt' y las organiza en una matriz según
+    categoría y dificultad.
+
+    Cada línea del archivo debe tener el siguiente formato:
+        categoría;dificultad;pregunta;opción1;opción2;...;respuestaCorrecta
+
+    Las preguntas se almacenan en la estructura global `preguntasTupla`, con la siguiente
+    organización:
+        - Filas: dificultad (fácil, media, difícil)
+        - Columnas: categoría (geografía, historia, ciencia, deporte, arte)
+
+    Si una línea del archivo no cumple con el formato esperado, se muestra un mensaje de error
+    y se omite esa entrada.
+
+    Maneja errores como:
+        - Archivo no encontrado
+        - Problemas de codificación (UTF-8)
+        - Errores de estructura o desempaquetado
+
+    No recibe parámetros ni retorna valores. Modifica la variable global `preguntasTupla`.
+    """
     try:
         with open('preguntas.txt', 'r', encoding='utf-8') as archivo:
             for numero_linea, linea in enumerate(archivo, start=1):

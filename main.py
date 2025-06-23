@@ -23,7 +23,8 @@ def mostrarMenu():
     print("=" * 70 + "\n")
 
 # Bucle principal del menú
-while True:
+ejecutando = True
+while ejecutando:
     limpiarConsola()
     mostrarMenu()
     opcion = input("👉 Elige una opción: ")
@@ -34,11 +35,11 @@ while True:
         modoTiempo.modoContraReloj()
     elif opcion == "3":
         ranking.mostrarRanking()
-        input("\n🔄 Presiona Enter para volver al menú...")  # <-- Acá está la clave
+        input("\n🔄 Presiona Enter para volver al menú...")
     elif opcion == "4":
         reglas.mostrarReglas()
     elif opcion == "5":
         print("👋 Saliendo del programa... ¡Gracias por jugar!")
-        break
+        ejecutando = False
     else:
         print("❌ Opción inválida. Por favor, elige una opción del 1 al 5.")
