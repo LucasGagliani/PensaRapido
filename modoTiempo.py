@@ -140,6 +140,6 @@ def modoContraReloj():
     print(f"⏱️ Tiempo total: {round(tiempoTotal, 2)} segundos")
     print(f"✅ Respuestas correctas: {correctas} de 10")
 
-    ranking.guardar_resultado(nombreJugador, correctas, round(tiempoTotal, 2))
+    ranking.guardarResultado(nombreJugador, correctas, round(tiempoTotal, 2))
 
     input("\n🔄 Presiona Enter para volver al menú...")
