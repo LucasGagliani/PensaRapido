@@ -7,7 +7,7 @@ import ranking
 PENALIZACION_TIEMPO = 10  # segundos extra por respuesta incorrecta o timeout
 TIEMPO_LIMITE = 30        # máximo de 30 segundos por pregunta
 
-def pedir_respuesta_con_tiempo():
+def pedirRespuestaConTiempo():
     """
     Solicita una respuesta numérica del usuario con un límite de tiempo.
 
@@ -19,10 +19,10 @@ def pedir_respuesta_con_tiempo():
     """
     respuesta = [None]
 
-    def obtener_respuesta():
+    def obtenerRespuesta():
         respuesta[0] = input("\n📝 Elegí la respuesta (número): ")
 
-    hilo = threading.Thread(target=obtener_respuesta)
+    hilo = threading.Thread(target=obtenerRespuesta)
     hilo.start()
     hilo.join(timeout=TIEMPO_LIMITE)
 
@@ -61,11 +61,11 @@ def hacerPregunta(nombre, pregunta):
     for i, opcion in enumerate(opciones):
         print(f"   {i+1}. {opcion}")
 
-    tiempo_inicio = time.time()
-    respuesta = pedir_respuesta_con_tiempo()
-    tiempo_fin = time.time()
+    tiempoInicio = time.time()
+    respuesta = pedirRespuestaConTiempo()
+    tiempoFin = time.time()
 
-    tiempo_respuesta = tiempo_fin - tiempo_inicio
+    tiempoRespuesta = tiempoFin - tiempoInicio
 
     if respuesta is None:
         print(f"❌ No respondiste a tiempo. Se suma una penalización de +{PENALIZACION_TIEMPO} segundos.")
@@ -77,13 +77,13 @@ def hacerPregunta(nombre, pregunta):
             seleccion = opciones[indice - 1]
             if seleccion == pregunta["respuestaCorrecta"]:
                 print("✅ ¡Correcto!")
-                return True, tiempo_respuesta
+                return True, tiempoRespuesta
             else:
                 print(f"❌ Incorrecto. La respuesta correcta era: {pregunta['respuestaCorrecta']}")
-                return False, tiempo_respuesta + PENALIZACION_TIEMPO
+                return False, tiempoRespuesta + PENALIZACION_TIEMPO
 
     print("❌ Entrada inválida. Se cuenta como incorrecta.")
-    return False, tiempo_respuesta + PENALIZACION_TIEMPO
+    return False, tiempoRespuesta + PENALIZACION_TIEMPO
 
 def modoContraReloj():
     """
@@ -112,7 +112,7 @@ def modoContraReloj():
     categorias = ['geografía', 'historia', 'ciencia', 'deporte', 'arte']
     dificultades = ['facil', 'media', 'dificil']
 
-    tiempo_total = 0
+    tiempoTotal = 0
     correctas = 0
     preguntasUsadas = []
 
@@ -129,17 +129,17 @@ def modoContraReloj():
             pregunta = random.choice(preguntasFiltradas)
             preguntasUsadas.append(pregunta)
             fueCorrecta, tiempo = hacerPregunta(nombreJugador, pregunta)
-            tiempo_total += tiempo
+            tiempoTotal += tiempo
             if fueCorrecta:
                 correctas += 1
         else:
             print("🚫 No hay preguntas disponibles. Se penaliza con +10 segundos.")
-            tiempo_total += PENALIZACION_TIEMPO
+            tiempoTotal += PENALIZACION_TIEMPO
 
     print("\n🏁 ¡Fin del juego! Resultados:")
-    print(f"⏱️ Tiempo total: {round(tiempo_total, 2)} segundos")
+    print(f"⏱️ Tiempo total: {round(tiempoTotal, 2)} segundos")
     print(f"✅ Respuestas correctas: {correctas} de 10")
 
-    ranking.guardar_resultado(nombreJugador, correctas, round(tiempo_total, 2))
+    ranking.guardar_resultado(nombreJugador, correctas, round(tiempoTotal, 2))
 
     input("\n🔄 Presiona Enter para volver al menú...")
