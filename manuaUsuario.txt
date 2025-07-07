@@ -1,0 +1,65 @@
+🎮 Manual de Usuario – Piensa Rápido
+Versión: 1.0
+Plataforma: Consola (Python)
+Autores: Nicolas Ledesma,Lucas Gagliani, Rodrigo Naconyszny,Gabriel Vivo
+Materia: Programacion 1
+
+🧠 ¿Qué es Piensa Rápido?
+Piensa Rápido es un juego de preguntas y respuestas por consola, ideal para poner a prueba tu conocimiento bajo presión.
+Podés competir contra otro jugador o desafiarte a vos mismo en modo contrarreloj. ¡Demostrá qué tan rápido pensás!
+
+🕹 Modos de juego
+Modo 1 vs 1
+
+Dos jugadores compiten turno a turno.
+
+Cada uno responde preguntas y gana puntos por respuestas correctas.
+
+Modo Contrarreloj
+
+Jugás solo contra el tiempo.
+
+Tenés un número limitado de preguntas y un tiempo límite.
+
+Al final, tu puntaje se guarda en un ranking general.
+
+📋 Funcionalidades principales
+✅ Ingresar tu nombre de jugador
+✅ Elegir el modo de juego
+✅ Ver resultados y puntajes
+✅ Consultar el ranking del modo contrarreloj
+
+🧑‍💻 ¿Cómo jugar?
+Abrí la consola y ejecutá el archivo principal del juego:
+
+
+python main.py
+Ingresá tu nombre cuando te lo pida.
+
+Elegí uno de los siguientes modos:
+
+1 → Modo 1 vs 1
+
+2 → Modo Contrarreloj
+
+3 → Ver Ranking
+
+0 → Salir del juego
+
+¡Empezá a responder!
+Leé cada pregunta y elegí la opción correcta (A, B, C, etc.).
+
+🏆 Ranking Contrarreloj
+En este modo, tu puntaje se guarda y podés ver quién tiene el mejor rendimiento.
+Ideal para mejorar tus tiempos y competir con amigos.
+
+ℹ Requisitos
+Tener instalado Python 3.x
+
+Ejecutar desde una terminal o consola
+
+Archivos del juego descargados en una carpeta local
+
+📞 Contacto
+Para dudas, sugerencias o mejoras:
+📁 https://github.com/LucasGagliani/PensaRapido
